@@ -2,72 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>John's Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="profile">
-      <img src="John.png" alt="John's Photo" class="profile-img">
-      <h1>John Arojo</h1>
-      <p class="tagline">Aspiring Developer & Technologist</p>
-    </div>
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
+  <header class="navbar">
+    <div class="logo">John</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="social-links">
-      <a href="#" aria-label="GitHub">GitHub</a>
-      <a href="#" aria-label="LinkedIn">LinkedIn</a>
-      <a href="#" aria-label="Twitter">Twitter</a>
+  </header>
+
+  <section class="hero">
+    <img src="images/John.png" alt="John" class="profile-pic" />
+    <div>
+      <h1>Hi, I’m <span class="highlight">John</span></h1>
+      <p>A passionate developer building clean & modern web experiences.</p>
     </div>
-  </aside>
+  </section>
 
-  <!-- Main Content -->
-  <main class="content">
-    <!-- About -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hello! I'm John, a passionate technologist and aspiring developer with a focus on creating efficient, user-friendly digital experiences. I love solving problems and turning ideas into reality through code.</p>
-    </section>
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a web developer who loves crafting elegant, responsive, and
+      accessible websites. With a strong eye for design, I combine aesthetics
+      with functionality to deliver great user experiences.
+    </p>
+  </section>
 
-    <!-- Experience -->
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="exp-item">
-        <h3>Computer Maintenance Technologist II</h3>
-        <p><strong>Company Name</strong> — Jan 2023 to Present</p>
-        <p>Responsible for maintaining and troubleshooting computer systems, networks, and peripherals. Assisted in implementing IT solutions that improved efficiency by 20%.</p>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Projects</h2>
+  <section class="featured-projects">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
       <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>A responsive, modern portfolio website inspired by Brittany Chiang’s design, showcasing my work and skills.</p>
+        <h3>Project One</h3>
+        <p>A brief description of this amazing project.</p>
       </div>
       <div class="project-card">
-        <h3>IT Inventory System</h3>
-        <p>Developed a CodeIgniter-based IT inventory tracking system with role-based access control and reporting features.</p>
+        <h3>Project Two</h3>
+        <p>Another project that showcases your skills.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>If you'd like to connect, feel free to reach out via email or my social media links.</p>
-      <a href="mailto:youremail@example.com" class="contact-btn">Email Me</a>
-    </section>
-  </main>
+  <footer id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:john@example.com">john@example.com</a></p>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
