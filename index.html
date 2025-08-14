@@ -10,6 +10,14 @@
     rel="stylesheet"
   >
   <style>
+    :root {
+      --green-main: #0A5C36;
+      --green-dark1: #0F5132;
+      --green-dark2: #14452F;
+      --green-dark3: #18392B;
+      --green-dark4: #1D2E28;
+    }
+
     body {
       background-color: #f8f9fa;
     }
@@ -18,7 +26,7 @@
       height: 150px;
       object-fit: cover;
       border-radius: 50%;
-      border: 4px solid #003366;
+      border: 4px solid var(--green-main);
       margin-bottom: 1rem;
     }
     .section-box {
@@ -29,16 +37,25 @@
       margin-bottom: 2rem;
     }
     h2 {
-      color: #003366;
+      color: var(--green-dark2);
     }
     nav.navbar {
-      background-color: #003366;
+      background-color: var(--green-main);
     }
     nav a.nav-link {
       color: white !important;
+      font-weight: 500;
     }
     nav a.nav-link:hover {
-      text-decoration: underline;
+      background-color: var(--green-dark1);
+      border-radius: 4px;
+    }
+    header {
+      background-color: var(--green-dark3) !important;
+    }
+    footer {
+      background-color: var(--green-dark4);
+      color: white !important;
     }
   </style>
 </head>
@@ -63,7 +80,7 @@
   </nav>
 
   <!-- Header -->
-  <header class="text-center bg-dark text-white py-5">
+  <header class="text-center text-white py-5">
     <img src="John.png" alt="John Vincent Arojo" class="profile-img" />
     <h1>John Vincent Arojo</h1>
     <p class="lead">IT Graduate | Aspiring Web Developer</p>
@@ -112,7 +129,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-3 text-muted">
+  <footer class="text-center py-3">
     © 2025 John Vincent Arojo
   </footer>
 
