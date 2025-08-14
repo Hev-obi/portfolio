@@ -1,182 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John's Portfolio</title>
-    <style>
-        /* ====== COLOR PALETTE ====== */
-        :root {
-            --blue-dark: #395A7F;
-            --blue-mid: #6E9FC1;
-            --blue-light: #A3CAE9;
-            --grey-light: #E9ECEE;
-            --grey-mid: #ACACAC;
-            --text-dark: #222;
-        }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: var(--grey-light);
-            color: var(--text-dark);
-        }
-
-        /* HEADER */
-        header {
-            background-color: var(--blue-dark);
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        header p {
-            margin: 0;
-            opacity: 0.9;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            background-color: var(--blue-mid);
-            color: white;
-            text-align: center;
-        }
-
-        .hero img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid var(--blue-light);
-            margin-right: 1.5rem;
-        }
-
-        .hero-text h2 {
-            margin: 0;
-            font-size: 1.8rem;
-        }
-
-        .hero-text p {
-            margin-top: 0.5rem;
-        }
-
-        /* PORTFOLIO SECTION */
-        .portfolio {
-            padding: 3rem 1rem;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .portfolio h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--blue-dark);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1rem;
-        }
-
-        .card-content h3 {
-            margin: 0;
-            color: var(--blue-mid);
-        }
-
-        .card-content p {
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            color: var(--grey-mid);
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: var(--blue-dark);
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Vincent Arojo | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Blue + Grey Palette */
+    :root {
+      --blue-dark: #395A7F;
+      --blue-mid: #6E9FC1;
+      --blue-light: #A3CAE9;
+      --grey-light: #E9ECEE;
+      --grey-mid: #ACACAC;
+      --text-dark: #222;
+    }
+    * {box-sizing: border-box; margin:0; padding:0;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--grey-light);
+      color: var(--text-dark);
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: var(--blue-dark);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    nav {
+      margin-top: 1rem;
+      font-weight: 500;
+    }
+    nav a {
+      color: white;
+      margin: 0 0.75rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--blue-light);
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+      background: var(--blue-mid);
+      color: white;
+      text-align: center;
+    }
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--blue-light);
+      margin-bottom: 1rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    section {
+      padding: 2.5rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+      color: var(--blue-dark);
+      font-weight: 600;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card-content {
+      padding: 1rem;
+      text-align: center;
+    }
+    .card-content h3 {
+      margin: 0.5rem 0;
+      color: var(--blue-mid);
+    }
+    .card-content p {
+      font-size: 0.95rem;
+      color: var(--grey-mid);
+    }
+    footer {
+      background: var(--blue-dark);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    @media(min-width: 600px) {
+      .hero { flex-direction: row; text-align: left; }
+      .hero img { margin-right: 2rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>John Arojo</h1>
-        <p>Web Developer | Designer | Creator</p>
-    </header>
+  <header>
+    <h1>John Vincent Arojo</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section class="hero">
-        <img src="https://via.placeholder.com/150" alt="Profile Picture">
-        <div class="hero-text">
-            <h2>Hello, I'm John 👋</h2>
-            <p>I create beautiful, functional, and responsive websites.</p>
+  <section class="hero" id="home">
+    <img src="John.png" alt="John Vincent Arojo" />
+    <div>
+      <h2>Hello, I'm John</h2>
+      <p>IT Graduate &amp; Aspiring Web Developer building functional and beautiful experiences.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>I'm a fresh IT graduate passionate about web development. I enjoy solving real-world problems with clean, responsive designs using HTML, CSS, JavaScript, and more.</p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="portfolio-grid">
+      <div class="card">
+        <div class="card-content">
+          <h3>Portfolio Website</h3>
+          <p>A responsive portfolio to showcase my work and contact details.</p>
         </div>
-    </section>
-
-    <section class="portfolio">
-        <h2>My Projects</h2>
-        <div class="portfolio-grid">
-            <div class="card">
-                <img src="https://via.placeholder.com/400x300" alt="Project 1">
-                <div class="card-content">
-                    <h3>Project One</h3>
-                    <p>A modern website built with HTML, CSS, and JavaScript.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/400x300" alt="Project 2">
-                <div class="card-content">
-                    <h3>Project Two</h3>
-                    <p>An interactive dashboard with real-time data updates.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://via.placeholder.com/400x300" alt="Project 3">
-                <div class="card-content">
-                    <h3>Project Three</h3>
-                    <p>A mobile-friendly eCommerce store with a smooth UI.</p>
-                </div>
-            </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Attendance System</h3>
+          <p>A CRUD app using PHP &amp; MySQL to manage student attendance.</p>
         </div>
-    </section>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>To-Do App</h3>
+          <p>A simple to-do list built with JavaScript for task management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>© 2025 John Arojo | All Rights Reserved</p>
-    </footer>
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>You can reach me at <a href="mailto:jarojo08@email.com">jarojo08@email.com</a> or find my work on <a href="https://github.com/your-username" target="_blank">GitHub</a>.</p>
+  </section>
+
+  <footer>© 2025 John Vincent Arojo</footer>
+
+  <script>
+    // Scroll animation
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(sec => observer.observe(sec));
+  </script>
 
 </body>
 </html>
